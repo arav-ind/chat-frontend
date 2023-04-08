@@ -1,7 +1,7 @@
 import { API_BASE_URL } from '@/constant/constants'
 import axios from 'axios'
 
-export const AxiosPost = async (formData: FormData) => {
+export const AxiosPostMFD = async (formData: FormData) => {
     try {
         const res = await axios.post(`${API_BASE_URL}/api/user`, formData,
           {
@@ -14,4 +14,13 @@ export const AxiosPost = async (formData: FormData) => {
     } catch (err: any) {
         console.log('[API Post] Error!', err)
     }
+}
+
+export const AxiosPost = async (formData: Object) => {
+  try {
+      const res = await axios.post(`${API_BASE_URL}/api/user/login`, formData)
+      return res
+  } catch (err: any) {
+      console.log('[API Post] Error!', err)
+  }
 }

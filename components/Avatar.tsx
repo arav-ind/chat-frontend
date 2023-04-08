@@ -13,7 +13,7 @@ const Avatar = ({ imageUrl, setSelectedImage }: AvatarPropType) => {
                 className='hidden'
                 type='file'
                 id='pic-input'
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSelectedImage(e)} />
+                onChange={(e) => setSelectedImage(e)} />
         </>
     )
 }

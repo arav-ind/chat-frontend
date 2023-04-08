@@ -1,4 +1,4 @@
-import { AxiosPost } from '@/api/api'
+import { AxiosPostMFD } from '@/api/api'
 import Avatar from '@/components/Avatar'
 import HeadComponent from '@/components/HeadComponent'
 import { useRouter } from 'next/router'
@@ -40,9 +40,13 @@ const RegisterUser = () => {
       formData.append('image', selectedImage)
     }
 
-    const result = await AxiosPost(formData)
+    const result = await AxiosPostMFD(formData)
     if (result?.status === 200) {
       router.push('/chat')
+    } else if (result?.status === 403) {
+      alert('User already exists!')
+    } else {
+      alert('Unable to Register! Please try again.')
     }
   }
 
@@ -53,10 +57,10 @@ const RegisterUser = () => {
       <div className='flex justify-center items-center px-10 my-16'>
         <div className='flex flex-col'>
           <h1 className='text-3xl font-bold py-10 self-center'>Register</h1>
-          <form className='flex flex-col gap-6' onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
+          <form className='flex flex-col gap-6' onSubmit={(e) => handleSubmit(e)}>
             <Avatar
               imageUrl={imageUrl}
-              setSelectedImage={(e: React.ChangeEvent<HTMLInputElement>) => setSelectedImage(e.target.files?.[0])}
+              setSelectedImage={(e) => setSelectedImage(e.target.files?.[0])}
             />
             <input className='w-80 h-10 rounded-lg pl-5 focus:outline-none' type='text' placeholder='Enter Your Name' onChange={(e) => setName(e.target.value)} />
             <input className='w-80 h-10 rounded-lg pl-5 focus:outline-none' type='email' placeholder='Enter Your Email' onChange={(e) => setEmail(e.target.value)} />

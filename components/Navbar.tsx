@@ -23,8 +23,8 @@ const Navbar = () => {
             </div>
             <div>
                 <div className='w-full flex flex-col items-end gap-4 mt-4' style={{ 'display': menuItems ? 'flex' : 'none' }}>
-                    <Link href='/signin' className='hover:text-[#16d991]'>Sign-In</Link>
-                    <Link href='/register' className='hover:text-[#16d991]'>Register</Link>
+                    <Link href='/signin' className='hover:text-[#16d991]' onClick={() => setMenuItems(!menuItems)}>Sign-In</Link>
+                    <Link href='/register' className='hover:text-[#16d991]' onClick={() => setMenuItems(!menuItems)}>Register</Link>
                 </div>
             </div>
         </nav>
