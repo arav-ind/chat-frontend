@@ -1,8 +1,10 @@
+import HeadComponent from '@/components/HeadComponent'
 import React from 'react'
 
 const Signin = () => {
     return (
         <>
+            <HeadComponent title='Signin' />
             <div className='flex justify-center items-center px-10 my-16'>
                 <div className='flex flex-col'>
                     <h1 className='text-3xl font-bold py-10 self-center'>Sign-In</h1>
