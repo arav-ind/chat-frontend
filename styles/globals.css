@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .anim-delay-2000 {
+    animation-delay: 2s;
+  }
+  .anim-delay-4000 {
+    animation-delay: 4s;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 1px #212532;
+  }
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -91,7 +103,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #212532
+  background: #212532;
 }
 
 a {

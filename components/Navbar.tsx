@@ -8,7 +8,7 @@ const Navbar = () => {
     const [menuItems, setMenuItems] = useState(false)
 
     return (
-        <nav className='fixed h-auto w-full top-0 flex flex-col py-3 bg-[#191c26] px-10'>
+        <nav className='fixed h-auto w-full top-0 flex flex-col py-3 bg-[#191c26] px-10 z-30'>
             <div className='flex justify-between'>
                 <div className='flex items-center justify-center text-[#16d991]'>
                     <Link href='/'><IoIosChatbubbles className='w-10 h-10' /></Link>
